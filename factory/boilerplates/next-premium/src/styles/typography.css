@@ -1,0 +1,74 @@
+/* Mobile-first premium typography scale */
+:root {
+  /* Display: Massive, tight-tracking, leading-none */
+  --text-display-size: 3.5rem; /* 56px */
+  --text-display-line-height: 1;
+  --text-display-tracking: -0.04em;
+
+  /* Heading: Large, tight-tracking */
+  --text-heading-size: 2.5rem; /* 40px */
+  --text-heading-line-height: 1.1;
+  --text-heading-tracking: -0.02em;
+
+  /* Subheading: Medium */
+  --text-subheading-size: 1.5rem; /* 24px */
+  --text-subheading-line-height: 1.3;
+  --text-subheading-tracking: -0.01em;
+
+  /* Body: Readable, relaxed */
+  --text-body-size: 1rem; /* 16px */
+  --text-body-line-height: 1.6;
+  --text-body-tracking: 0;
+
+  /* Caption: Small, tracked out (Eyebrow) */
+  --text-caption-size: 0.75rem; /* 12px */
+  --text-caption-line-height: 1.5;
+  --text-caption-tracking: 0.1em;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-display-size: 5rem; /* 80px */
+    --text-heading-size: 3.5rem; /* 56px */
+    --text-subheading-size: 1.75rem; /* 28px */
+    --text-body-size: 1.125rem; /* 18px */
+  }
+}
+
+/* Base Utility Classes */
+.text-display {
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-line-height);
+  letter-spacing: var(--text-display-tracking);
+  font-weight: 600;
+}
+
+.text-heading {
+  font-size: var(--text-heading-size);
+  line-height: var(--text-heading-line-height);
+  letter-spacing: var(--text-heading-tracking);
+  font-weight: 500;
+}
+
+.text-subheading {
+  font-size: var(--text-subheading-size);
+  line-height: var(--text-subheading-line-height);
+  letter-spacing: var(--text-subheading-tracking);
+  font-weight: 400;
+}
+
+.text-body {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  letter-spacing: var(--text-body-tracking);
+  font-weight: 400;
+  max-width: 65ch; /* Content width readability constraint */
+}
+
+.text-caption {
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line-height);
+  letter-spacing: var(--text-caption-tracking);
+  font-weight: 500;
+  text-transform: uppercase;
+}

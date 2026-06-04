@@ -1,0 +1,40 @@
+:root {
+  /* Spacing (Taste Skill - macro whitespace) */
+  --space-section-sm: 4rem;
+  --space-section-md: 6rem;
+  --space-section-lg: 8rem;
+  --space-section-xl: 10rem;
+
+  /* Radius (Taste Skill - shape lock) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+  
+  --radius-outer: var(--radius-2xl);
+  --radius-inner: calc(var(--radius-outer) - 0.375rem);
+
+  /* Shadows (Taste Skill - ultra diffuse, low opacity, or non-existent) */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.02);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.03);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05);
+
+  /* Z-Index Hierarchy */
+  --z-base: 0;
+  --z-sticky: 30;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 80;
+
+  /* Transitions (Taste Skill - Custom curves) */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+  --duration-reveal: 800ms;
+}
