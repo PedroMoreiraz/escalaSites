@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/hero",
+  "title": "Hero Section Data",
+  "type": "object",
+  "required": ["headline", "subheadline", "cta"],
+  "properties": {
+    "headline": { "type": "string", "maxLength": 80 },
+    "subheadline": { "type": "string", "maxLength": 200 },
+    "cta": {
+      "type": "object",
+      "required": ["label", "href"],
+      "properties": {
+        "label": { "type": "string", "maxLength": 40 },
+        "href": { "type": "string" }
+      }
+    },
+    "secondaryCta": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "href": { "type": "string" }
+      }
+    },
+    "socialProof": {
+      "type": "object",
+      "properties": {
+        "metric": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["image", "video", "none"] },
+        "src": { "type": "string" },
+        "alt": { "type": "string" }
+      }
+    }
+  }
+}

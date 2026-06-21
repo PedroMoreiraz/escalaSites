@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/implementation-plan",
+  "title": "Implementation Plan",
+  "description": "Defines the development sequence and file generation order.",
+  "type": "object",
+  "required": ["project", "boilerplate", "config", "dataFiles", "sections", "seo"],
+  "properties": {
+    "project": {
+      "type": "object",
+      "required": ["clientSlug", "siteName", "targetUrl"],
+      "properties": {
+        "clientSlug": { "type": "string" },
+        "siteName": { "type": "string" },
+        "targetUrl": { "type": "string", "format": "uri" }
+      }
+    },
+    "boilerplate": {
+      "type": "string",
+      "description": "Boilerplate used (always next-premium for current version).",
+      "const": "next-premium"
+    },
+    "config": {
+      "type": "object",
+      "description": "Files to generate in /config.",
+      "properties": {
+        "siteConfig": { "type": "boolean" }
+      }
+    },
+    "dataFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "schema"],
+        "properties": {
+          "file": { "type": "string", "description": "e.g. heroData.ts" },
+          "schema": { "type": "string", "description": "Corresponding schema ID." }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["component", "dataFile"],
+        "properties": {
+          "component": { "type": "string" },
+          "dataFile": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "metadata": { "type": "boolean" },
+        "structuredData": { "type": "boolean" },
+        "sitemap": { "type": "boolean" },
+        "robots": { "type": "boolean" }
+      }
+    }
+  }
+}

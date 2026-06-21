@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/content-strategy",
+  "title": "Content Strategy",
+  "description": "Defines the narrative arc and messaging hierarchy for the site.",
+  "type": "object",
+  "required": ["designRead", "primaryConversionGoal", "narrative", "sections"],
+  "properties": {
+    "designRead": {
+      "type": "string",
+      "description": "Single sentence framing the design context (e.g. B2B SaaS for technical buyers)."
+    },
+    "primaryConversionGoal": {
+      "type": "string",
+      "description": "The one action visitors must take (e.g. book consultation, request quote)."
+    },
+    "narrative": {
+      "type": "object",
+      "required": ["hook", "problem", "solution", "proof", "cta"],
+      "properties": {
+        "hook": { "type": "string" },
+        "problem": { "type": "string" },
+        "solution": { "type": "string" },
+        "proof": { "type": "string" },
+        "cta": { "type": "string" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sectionId", "headline", "subheadline", "purpose"],
+        "properties": {
+          "sectionId": { "type": "string" },
+          "headline": { "type": "string", "maxLength": 80 },
+          "subheadline": { "type": "string", "maxLength": 160 },
+          "purpose": { "type": "string" },
+          "cta": { "type": "string" }
+        }
+      }
+    }
+  }
+}

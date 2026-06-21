@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/services",
+  "title": "Services Section Data",
+  "type": "array",
+  "minItems": 2,
+  "maxItems": 8,
+  "items": {
+    "type": "object",
+    "required": ["title", "description"],
+    "properties": {
+      "title": { "type": "string", "maxLength": 50 },
+      "description": { "type": "string", "maxLength": 200 },
+      "icon": { "type": "string", "description": "Lucide icon name or SVG path." },
+      "cta": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "href": { "type": "string" }
+        }
+      }
+    }
+  }
+}

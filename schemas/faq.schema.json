@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/faq",
+  "title": "FAQ Section Data",
+  "type": "array",
+  "minItems": 3,
+  "maxItems": 10,
+  "items": {
+    "type": "object",
+    "required": ["question", "answer"],
+    "properties": {
+      "question": {
+        "type": "string",
+        "maxLength": 120,
+        "description": "Questions must reflect real client inquiries, not generic placeholders."
+      },
+      "answer": {
+        "type": "string",
+        "maxLength": 500
+      }
+    }
+  }
+}

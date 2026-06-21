@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/page-architecture",
+  "title": "Page Architecture",
+  "description": "Defines the vertical section layout for a generated page.",
+  "type": "object",
+  "required": ["page", "sections"],
+  "properties": {
+    "page": {
+      "type": "string",
+      "description": "Page identifier (e.g. homepage, about, services)."
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "layout"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique section identifier."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["hero", "social-proof", "features", "bento", "zigzag", "testimonials", "faq", "cta", "footer", "custom"],
+            "description": "Section type."
+          },
+          "layout": {
+            "type": "string",
+            "enum": ["full-width", "split-left", "split-right", "grid", "stacked", "bento-grid"],
+            "description": "Layout family for this section."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Conversion or narrative purpose of this section."
+          }
+        }
+      },
+      "description": "Ordered list of sections composing the page."
+    }
+  }
+}

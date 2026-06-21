@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/testimonials",
+  "title": "Testimonials Section Data",
+  "type": "array",
+  "minItems": 2,
+  "maxItems": 6,
+  "items": {
+    "type": "object",
+    "required": ["quote", "author", "role"],
+    "properties": {
+      "quote": {
+        "type": "string",
+        "maxLength": 300,
+        "description": "Must be a real quote. Never fabricate."
+      },
+      "author": { "type": "string" },
+      "role": { "type": "string" },
+      "company": { "type": "string" },
+      "avatar": {
+        "type": "string",
+        "description": "Path to real photo. Never use placeholder avatars."
+      }
+    }
+  }
+}

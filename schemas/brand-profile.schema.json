@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/brand-profile",
+  "title": "Brand Profile",
+  "description": "Defines the brand identity used across the entire site generation pipeline.",
+  "type": "object",
+  "required": ["name", "tagline", "audience", "tone", "differentiators", "archetype", "dials"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Official business name."
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "One-sentence brand positioning statement."
+    },
+    "audience": {
+      "type": "string",
+      "description": "Primary target audience description."
+    },
+    "tone": {
+      "type": "string",
+      "enum": ["formal", "conversational", "technical", "authoritative", "warm"],
+      "description": "Overall communication tone."
+    },
+    "differentiators": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2,
+      "maxItems": 5,
+      "description": "Key differentiators from competitors."
+    },
+    "values": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Core brand values."
+    },
+    "archetype": {
+      "type": "string",
+      "enum": ["Ethereal Glass", "Editorial Luxury", "Soft Structuralism", "Utilitarian Minimalism"],
+      "description": "Selected visual archetype for the project."
+    },
+    "dials": {
+      "type": "object",
+      "required": ["variance", "motion", "density"],
+      "properties": {
+        "variance": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Layout diversity and composition freedom."
+        },
+        "motion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Animation intensity and interaction richness."
+        },
+        "density": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Spacing and content compression."
+        }
+      }
+    },
+    "sector": {
+      "type": "string",
+      "enum": ["restaurant", "clinic", "law-firm", "saas", "ecommerce", "agency", "other"],
+      "description": "Business sector for playbook selection."
+    },
+    "locale": {
+      "type": "string",
+      "description": "Client locale (e.g. pt-BR, en-US)."
+    }
+  }
+}

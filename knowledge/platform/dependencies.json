@@ -1,0 +1,16 @@
+{
+  "core": [
+    "framer-motion",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "next-themes",
+    "zod",
+    "react-hook-form",
+    "@hookform/resolvers",
+    "sonner",
+    "lenis",
+    "vaul"
+  ]
+}

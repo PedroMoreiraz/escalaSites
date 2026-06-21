@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "escalasites/data-layer",
+  "title": "Data Layer",
+  "description": "Container for all section data files in a project.",
+  "type": "object",
+  "properties": {
+    "hero": { "$ref": "#/$defs/heroData" },
+    "services": { "$ref": "#/$defs/servicesData" },
+    "testimonials": { "$ref": "#/$defs/testimonialsData" },
+    "faq": { "$ref": "#/$defs/faqData" },
+    "cta": { "$ref": "#/$defs/ctaData" },
+    "footer": { "$ref": "#/$defs/footerData" }
+  },
+  "$defs": {
+    "heroData": {
+      "type": "object",
+      "required": ["headline", "subheadline", "cta"],
+      "properties": {
+        "headline": { "type": "string" },
+        "subheadline": { "type": "string" },
+        "cta": {
+          "type": "object",
+          "required": ["label", "href"],
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" }
+          }
+        },
+        "secondaryCta": {
+          "type": "object",
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" }
+          }
+        }
+      }
+    },
+    "servicesData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "description"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "testimonialsData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["quote", "author", "role"],
+        "properties": {
+          "quote": { "type": "string" },
+          "author": { "type": "string" },
+          "role": { "type": "string" },
+          "company": { "type": "string" }
+        }
+      }
+    },
+    "faqData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        }
+      }
+    },
+    "ctaData": {
+      "type": "object",
+      "required": ["headline", "cta"],
+      "properties": {
+        "headline": { "type": "string" },
+        "subheadline": { "type": "string" },
+        "cta": {
+          "type": "object",
+          "required": ["label", "href"],
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" }
+          }
+        }
+      }
+    },
+    "footerData": {
+      "type": "object",
+      "required": ["brand", "links"],
+      "properties": {
+        "brand": { "type": "string" },
+        "tagline": { "type": "string" },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "href"],
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
